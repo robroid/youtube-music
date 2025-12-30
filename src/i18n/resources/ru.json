@@ -154,7 +154,7 @@
                 "label": "Собственное название окна",
                 "prompt": {
                   "label": "Введите собственное название окна: (оставьте пустым, чтобы отключить)",
-                  "placeholder": "Например: YouTube Music"
+                  "placeholder": "Например: {{applicationName}}"
                 }
               },
               "like-buttons": {
@@ -163,7 +163,7 @@
                 "hide": "Скрывать",
                 "label": "Кнопка лайка"
               },
-              "remove-upgrade-button": "Убрать кнопку Youtube Premium",
+              "remove-upgrade-button": "Убрать кнопку Premium",
               "theme": {
                 "dialog": {
                   "button": {
@@ -208,8 +208,8 @@
       "restart": "Перезапустить приложение",
       "show": "Показать окно",
       "tooltip": {
-        "default": "YouTube Music",
-        "with-song-info": "YouTube Music: {{artist}} - {{title}}"
+        "default": "{{applicationName}}",
+        "with-song-info": "{{applicationName}}: {{artist}} - {{title}}"
       }
     }
   },
@@ -369,11 +369,11 @@
       "name": "Размытие панели навигации"
     },
     "bypass-age-restrictions": {
-      "description": "Обход проверки возраста на YouTube",
+      "description": "Обход проверки возраста на Music Player",
       "name": "Обход возрастных ограничений"
     },
     "captions-selector": {
-      "description": "Выбор субтитров для аудиотреков в YouTube Music",
+      "description": "Выбор субтитров для аудиотреков в {{applicationName}}",
       "menu": {
         "autoload": "Автоматически выбирать последние использованные субтитры",
         "disable-captions": "Без субтитров по умолчанию"
@@ -456,14 +456,14 @@
         "disconnected": "Отключено",
         "hide-duration-left": "Скрыть сколько осталось времени",
         "hide-github-button": "Скрыть ссылку на GitHub",
-        "play-on-youtube-music": "Воспроизвести на YouTube Music",
+        "play-on-application": "Воспроизвести на {{applicationName}}",
         "set-inactivity-timeout": "Поставить таймер неактивности",
         "set-status-display-type": {
           "label": "Текст статуса",
           "submenu": {
+            "application": "Слушает {{applicationName}}",
             "artist": "Слушает {исполнитель}",
-            "title": "Слушает {название трека}",
-            "youtube-music": "Слушает YouTube Music"
+            "title": "Слушает {название трека}"
           }
         }
       },
