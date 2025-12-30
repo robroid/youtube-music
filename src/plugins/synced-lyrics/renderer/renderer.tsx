@@ -53,10 +53,10 @@ createEffect(() => {
   switch (lineEffect) {
     case 'enhanced':
       root.style.setProperty('--lyrics-font-family', 'Satoshi, sans-serif');
-      root.style.setProperty('--lyrics-font-size', '2rem');
+      root.style.setProperty('--lyrics-font-size', '2.2rem');
       root.style.setProperty('--lyrics-line-height', '1.333');
       root.style.setProperty('--lyrics-width', '100%');
-      root.style.setProperty('--lyrics-padding', '12.5px');
+      root.style.setProperty('--lyrics-padding', '8.5px');
       root.style.setProperty('--lyrics-will-change', 'transform, opacity');
 
       root.style.setProperty(
