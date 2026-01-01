@@ -112,13 +112,13 @@ export const LyricsPicker = (props: {
       return;
     }
 
-    let parsed: unknown = null;
+    let parsedStorageData: unknown = null;
     try {
-      parsed = JSON.parse(value);
+      parsedStorageData = JSON.parse(value);
     } catch {
-      parsed = null;
+      parsedStorageData = null;
     }
-    const parseResult = LocalStorageSchema.safeParse(parsed);
+    const parseResult = LocalStorageSchema.safeParse(parsedStorageData);
     if (parseResult.success) {
       setLyricsStore('provider', parseResult.data.provider);
       setStarredProvider(parseResult.data.provider);

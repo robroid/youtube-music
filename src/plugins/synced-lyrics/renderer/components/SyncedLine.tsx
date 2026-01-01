@@ -139,9 +139,18 @@ const EmptyLine = (props: SyncedLineProps) => {
     return first === '' || first === '\u00A0';
   });
 
+  // helper to build the class string for the placeholder/empty line
+  function getEmptyLineClass() {
+    let cls = 'synced-emptyline';
+    cls += ` ${props.status}`;
+    if (isFinalEmpty()) cls += ' final-empty';
+    if (shouldRemovePadding()) cls += ' no-padding';
+    return cls;
+  }
+
   return (
     <div
-      class={`synced-emptyline ${props.status} ${isFinalEmpty() ? 'final-empty' : ''} ${shouldRemovePadding() ? 'no-padding' : ''}`}
+      class={getEmptyLineClass()}
       onClick={() => {
         seekToMs(props.line.timeInMs);
       }}

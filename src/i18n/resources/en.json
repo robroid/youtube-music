@@ -874,7 +874,7 @@
         },
         "precise-timing": {
           "label": "Make the lyrics perfectly synced",
-          "tooltip": "Calculate to the milisecond the display of the next line (can have a small impact on performance)"
+          "tooltip": "Calculate to the millisecond the display of the next line (can have a small impact on performance)"
         },
         "romanization": {
           "label": "Romanize lyrics",
