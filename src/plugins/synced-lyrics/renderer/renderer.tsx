@@ -351,14 +351,20 @@ export const LyricsRenderer = () => {
 
     const previous = untrack(statuses);
 
-    const current = data.lines.map((line) => {
-      const startTimeMs = getSeekTime(line.timeInMs, precise) * 1000;
-      const endTimeMs =
-        getSeekTime(line.timeInMs + line.duration, precise) * 1000;
-
-      if (currentTimeMs < startTimeMs) return 'upcoming';
-      if (currentTimeMs >= endTimeMs) return 'previous';
-      return 'current';
+    // find the current line index (the last line whose startTimeMs <= currentTimeMs)
+    let currentIdx = -1;
+    for (let i = 0; i < data.lines.length; i++) {
+      const startTimeMs = getSeekTime(data.lines[i].timeInMs, precise) * 1000;
+      if (currentTimeMs >= startTimeMs) {
+        currentIdx = i;
+      } else {
+        break;
+      }
+    }
+    const current = data.lines.map((_, i) => {
+      if (i < currentIdx) return 'previous';
+      if (i === currentIdx) return 'current';
+      return 'upcoming';
     });
 
     if (previous.length !== current.length) {
